@@ -23,7 +23,8 @@ class AdminPostController extends Controller
      */
     public function index()
     {
-        $posts=Post::with('photo','user','category')->paginate(2);
+        $posts=Post::with('photo','user','category')->orderBy('created_at','desc')
+            ->paginate(5);
         return view('admin.posts.index',compact(['posts']));
     }
 

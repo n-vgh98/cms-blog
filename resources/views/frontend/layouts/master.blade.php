@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="author" content="">
     @yield('head')
-    <title>Blog Nursa</title>
+    <title>Nursa Blog </title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="{{asset('frontend/all.css')}}">
@@ -43,7 +43,7 @@
 <!-- Footer -->
 <footer class="py-5 bg-dark">
     <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2020</p>
+        <p class="m-0 text-center text-white">Copyright &copy; <a href="http://www.nursa.me">Nursa</a>  Team 2020</p>
     </div>
     <!-- /.container -->
 </footer>

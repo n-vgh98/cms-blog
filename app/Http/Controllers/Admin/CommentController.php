@@ -30,7 +30,7 @@ class CommentController extends Controller
                 $comment= Comment::findOrFail($id);
                 $comment->status=0;
                 $comment->save();
-                session::flash('reject_comment','comment unsuccessfully added');
+                session::flash('reject_comment','No comment added');
             }
         }
         return redirect('admin/comments');

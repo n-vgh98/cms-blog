@@ -8,18 +8,13 @@
                 </div><!-- /.col -->
                  <div class="col-sm-6">
                       <ol class="breadcrumb float-sm-right">
-                         <li class="breadcrumb-item"><a href="#">Home</a></li>
-                         <li class="breadcrumb-item active">Dashboard v1</li>
+                          <li class="breadcrumb-item"><a href="{{route('dashboard.index')}}">Home</a></li>
                       </ol>
                   </div><!-- /.col -->
             </div><!-- /.row -->
         </div>
     </div>
     <section class="bg-white">
-    <div class="col-md-6 offset-3 ">
-        @include('partials.errors')
-        {!! Form::open(['method'=>'post' , 'action'=>'Admin\AdminUserController@store','files'=>true]) !!}
-    </div>
     <div class="col-md-6 offset-3 bg-white">
         @include('partials.errors')
         {!! Form::open(['method'=>'post' , 'action'=>'Admin\AdminUserController@store']) !!}
@@ -45,6 +40,10 @@
             </div>
             <div class="form-group">
                 {!! Form::label('password','Password:') !!}
+                {!! Form::password('password' , ['class'=>'form-control']) !!}
+            </div>
+            <div class="form-group">
+                {!! Form::label('password','Confirm Password:') !!}
                 {!! Form::password('password' , ['class'=>'form-control']) !!}
             </div>
             <div class="form-group">

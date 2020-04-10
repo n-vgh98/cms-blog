@@ -36,6 +36,8 @@ class CategoryRequset extends FormRequest
         return [
             'title'=>'required',
             'slug'=> Rule::unique('categories')->ignore(request()->category),
+            'meta_description'=>'required',
+            'meta_keywords'=>'required',
         ];
     }
 
@@ -44,6 +46,8 @@ class CategoryRequset extends FormRequest
         return [
             'title.required'=>'Please enter a title',
             'slug.unique'=>'This alias is already registered',
+            'meta_description.required'=>'please enter a meta_description',
+            'meta_keywords.required'=>'please enter a meta_keywords',
         ];
     }
 }

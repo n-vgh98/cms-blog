@@ -29,6 +29,7 @@ class UsersRequest extends FormRequest
             'roles'=>'required',
             'status'=>'required',
             'password'=>'required|min:8',
+            'confirm password'=>'required|min:8',
         ];
     }
 
@@ -43,6 +44,8 @@ class UsersRequest extends FormRequest
             'status.required'=>'Please specify your status',
             'password.required'=>'please enter your password',
             'password.min'=>'Your password must be more than 8 characters long',
+            'confirm password.min'=>'Your password must be more than 8 characters long',
+            'confirm password.required'=>'please confirm your password',
            ];
 
     }

@@ -8,9 +8,8 @@
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                   <ol class="breadcrumb float-sm-right">
-                      <li class="breadcrumb-item"><a href="#">Home</a></li>
-                     <li class="breadcrumb-item active">Dashboard v1</li>
-                 </ol>
+                      <li class="breadcrumb-item"><a href="{{route('dashboard.index')}}">Home</a></li>
+                  </ol>
                  </div><!-- /.col -->
             </div><!-- /.row -->
         </div>
@@ -44,16 +43,16 @@
                 <td>{{$comment->post->title}}</td>
                 <td>{{$comment->created_at}}</td>
                 @if($comment->status == 0)
-                    <td><span class="badge badge-pill badge-danger">Inactive</span></td>
+                    <td><span class="badge badge-pill badge-danger">Unpublished</span></td>
                 @else
-                    <td><span class="badge badge-pill badge-success">Active</span></td>
+                    <td><span class="badge badge-pill badge-success">Published</span></td>
                 @endif
                 @if($comment->status == 0)
                 <td>
                     {!! Form::open(['method'=>'post' , 'route'=>['comments.actions',$comment->id]]) !!}
                     <div class="form-group">
                         {!! Form::hidden('action','approved') !!}
-                        {!! Form::submit('OK', ['class'=>'btn btn-success']) !!}
+                        {!! Form::submit('Confirm', ['class'=>'btn btn-success']) !!}
                     </div>
                     {!! Form::close() !!}
                 </td>
@@ -62,7 +61,7 @@
                     {!! Form::open(['method'=>'post' , 'route'=>['comments.actions',$comment->id]]) !!}
                     <div class="form-group">
                         {!! Form::hidden('action','reject') !!}
-                        {!! Form::submit('Not Ok', ['class'=>'btn btn-danger']) !!}
+                        {!! Form::submit('Unconfirmed', ['class'=>'btn btn-danger']) !!}
                     </div>
                     {!! Form::close() !!}
                     </td>

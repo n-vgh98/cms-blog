@@ -12,9 +12,9 @@
 
 @foreach($comments as $comment)
     <div class="media mb-4 ml-4">
-        <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+        <img src="{{$comment->user->photo ? $comment->user->photo->path : "http://www.placehold.it/50*50"}}" class="d-flex mr-3 rounded-circle" width="50">
         <div class="media-body">
-            <h5 class="mt-0">Commenter Name</h5>
+            <h5 class="mt-0">{{$comment->user->name}}</h5>
             {{$comment->description}}
             <div class="media mt-4">
                 <button class="btn btn-light btn-open" id="div-comment-{{$comment->id}}">Reply</button>

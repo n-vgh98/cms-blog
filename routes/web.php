@@ -34,7 +34,3 @@ Route::get('/search','Frontend\PostController@searchTitle')->name('frontend.post
 Route::post('/comment/{postId}','Frontend\CommentController@store')->name('frontend.comments.store');
 Route::post('/comment','Frontend\CommentController@reply')->name('frontend.comments.reply');
 
-Route::resource('admin/users','Admin\AdminUserController');
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
