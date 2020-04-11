@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddStatusToUsersTable extends Migration
+class AddUserIdToCommentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,9 @@ class AddStatusToUsersTable extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->tinyInteger('status')->unsigned()->default(1);
+        Schema::table('comments', function (Blueprint $table) {
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
@@ -25,8 +26,8 @@ class AddStatusToUsersTable extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('status');
+        Schema::table('comments', function (Blueprint $table) {
+            $table->dropColumn('user_id');
         });
     }
 }
