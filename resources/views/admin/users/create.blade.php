@@ -17,7 +17,7 @@
     <section class="bg-white">
     <div class="col-md-6 offset-3 bg-white">
         @include('partials.errors')
-        {!! Form::open(['method'=>'post' , 'action'=>'Admin\AdminUserController@store']) !!}
+        {!! Form::open(['method'=>'post' , 'action'=>'Admin\AdminUserController@store','files'=>true]) !!}
             <div class="form-group">
                 {!! Form::label('title','Name and Family:') !!}
                 {!! Form::text('name', null , ['class'=>'form-control']) !!}

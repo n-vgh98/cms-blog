@@ -13,7 +13,7 @@
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('dashboard');
 Route::group(['middleware'=>'admin'], function (){
     Route::resource('admin/users','Admin\AdminUserController');
     Route::resource('admin/posts','Admin\AdminPostController');

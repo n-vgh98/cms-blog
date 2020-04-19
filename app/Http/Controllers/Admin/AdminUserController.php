@@ -23,7 +23,7 @@ class AdminUserController extends Controller
      */
     public function index()
     {
-        $users=User::with('roles')->orderBy('created_at','desc')->paginate(5);
+        $users=User::with('roles','photo')->orderBy('created_at','desc')->paginate(5);
         return view('admin.users.index',compact(['users']));
     }
 
